@@ -1,0 +1,321 @@
+
+*************************************************************
+ Geant4 version Name: geant4-09-04-patch-04    (13-April-2012)
+                      Copyright : Geant4 Collaboration
+                      Reference : NIM A 506 (2003), 250-303
+                            WWW : http://cern.ch/geant4
+*************************************************************
+
+Visualization Manager instantiating with verbosity "warnings (3)"...
+Visualization Manager initialising...
+Registering graphics systems...
+
+You have successfully registered the following graphics systems.
+Current available graphics systems are:
+  ASCIITree (ATree)
+  DAWNFILE (DAWNFILE)
+  G4HepRep (HepRepXML)
+  G4HepRepFile (HepRepFile)
+  RayTracer (RayTracer)
+  VRML1FILE (VRML1FILE)
+  VRML2FILE (VRML2FILE)
+  gMocrenFile (gMocrenFile)
+  OpenGLStoredQt (OGL)
+  OpenGLImmediateQt (OGLI)
+  OpenGLStoredQt (OGLS)
+  OpenGLImmediateQt (OGLIQt)
+  OpenGLStoredQt (OGLSQt)
+  RayTracerX (RayTracerX)
+
+Registering model factories...
+
+You have successfully registered the following model factories.
+Registered model factories:
+  generic
+  drawByCharge
+  drawByParticleID
+  drawByOriginVolume
+  drawByAttribute
+
+Registered filter factories:
+  chargeFilter
+  particleFilter
+  originVolumeFilter
+  attributeFilter
+
+  Surface type   = 1
+  Surface finish = 0
+  Surface model  = 0
+
+  Surface parameter 
+  ----------------- 
+1
+
+G4Cerenkov::G4Cerenkov constructor
+NOTE: this is now a G4VProcess!
+Required change in UserPhysicsList: 
+change: pmanager->AddContinuousProcess(theCerenkovProcess);
+to:     pmanager->AddProcess(theCerenkovProcess);
+        pmanager->SetProcessOrdering(theCerenkovProcess,idxPostStep);
+ AddDiscreteProcess to OpticalPhoton 
+#
+/gun/particle opticalphoton
+/gun/energy 3 eV
+/gun/direction 5 -3 0
+# /N06/gun/optPhotonPolar 90 deg
+/N06/gun/optPhotonPolar
+#
+/tracking/verbose 0
+#
+/run/beamOn 10
+
+conv:   for  gamma    SubType= 14
+      Lambda tables from 1.022 MeV to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        BetheHeitler :   Emin=        0 eV       Emax=         10 TeV
+
+compt:   for  gamma    SubType= 13
+      Lambda tables from 100 eV  to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       Klein-Nishina :   Emin=        0 eV       Emax=         10 TeV
+
+phot:   for  gamma    SubType= 12
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       PhotoElectric :   Emin=        0 eV       Emax=         10 TeV
+
+msc:   for e-    SubType= 10
+      Lambda tables from 100 eV  to 10 TeV in 77 bins, spline: 1
+      RangeFactor= 0.04, stepLimitType: 1, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc93 :   Emin=        0 eV       Emax=         10 TeV
+
+eIoni:   for  e-    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :   Emin=        0 eV       Emax=         10 TeV
+
+eBrem:   for  e-    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               eBrem :   Emin=        0 eV       Emax=          1 GeV  AngularGenUrban
+            eBremLPM :   Emin=        1 GeV      Emax=         10 TeV  AngularGenUrban
+
+eIoni:   for  e+    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha :   Emin=        0 eV       Emax=         10 TeV
+
+eBrem:   for  e+    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      LPM flag: 1 for E > 1 GeV
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               eBrem :   Emin=        0 eV       Emax=          1 GeV  AngularGenUrban
+            eBremLPM :   Emin=        1 GeV      Emax=         10 TeV  AngularGenUrban
+
+annihil:   for  e+    SubType= 5
+      Lambda tables from 100 eV  to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            eplus2gg :   Emin=        0 eV       Emax=         10 TeV
+
+msc:   for proton    SubType= 10
+      Lambda tables from 100 eV  to 10 TeV in 77 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :   Emin=        0 eV       Emax=         10 TeV
+
+hIoni:   for  proton    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :   Emin=        0 eV       Emax=          2 MeV
+          BetheBloch :   Emin=        2 MeV      Emax=         10 TeV
+
+hIoni:   for  anti_proton    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :   Emin=        0 eV       Emax=          2 MeV
+          BetheBloch :   Emin=        2 MeV      Emax=         10 TeV
+
+muMsc:   for mu+    SubType= 10
+      Lambda tables from 100 eV  to 10 TeV in 77 bins, spline: 1
+      RangeFactor= 0.2, step limit type: 0, lateralDisplacement: 1, polarAngleLimit(deg)= 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :   Emin=        0 eV       Emax=         10 TeV
+
+muIoni:   for  mu+    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :   Emin=        0 eV       Emax=        200 keV
+          BetheBloch :   Emin=      200 keV      Emax=          1 GeV
+        MuBetheBloch :   Emin=        1 GeV      Emax=         10 TeV
+
+muBrems:   for  mu+    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :   Emin=        0 eV       Emax=         10 TeV
+
+muPairProd:   for  mu+    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :   Emin=        0 eV       Emax=         10 TeV
+
+muIoni:   for  mu-    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :   Emin=        0 eV       Emax=        200 keV
+          BetheBloch :   Emin=      200 keV      Emax=          1 GeV
+        MuBetheBloch :   Emin=        1 GeV      Emax=         10 TeV
+
+muBrems:   for  mu-    SubType= 3
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem :   Emin=        0 eV       Emax=         10 TeV
+
+muPairProd:   for  mu-    SubType= 4
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd :   Emin=        0 eV       Emax=         10 TeV
+
+hIoni:   for  pi+    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg :   Emin=        0 eV       Emax=    297.505 keV
+          BetheBloch :   Emin=  297.505 keV      Emax=         10 TeV
+
+msc:   for pi-    SubType= 10
+      Lambda tables from 100 eV  to 10 TeV in 77 bins, spline: 1
+      RangeFactor= 0.2, stepLimitType: 0, latDisplacement: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          UrbanMsc90 :   Emin=        0 eV       Emax=         10 TeV
+
+hIoni:   for  pi-    SubType= 2
+      dE/dx and range tables from 100 eV  to 10 TeV in 77 bins
+      Lambda tables from threshold to 10 TeV in 77 bins, spline: 1
+      finalRange(mm)= 1, dRoverRange= 0.2, integral: 1, fluct: 1, linLossLimit= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO :   Emin=        0 eV       Emax=    297.505 keV
+          BetheBloch :   Emin=  297.505 keV      Emax=         10 TeV
+### Run 0 start.
+ Photon at Boundary! 
+ thePrePV:  Tank
+ thePostPV: World
+ Old Momentum Direction: (0.857493,-0.514496,0)
+ Old Polarization:       (-0.21616,-0.360266,0.90746)
+ New Momentum Direction: (0.857493,-0.514496,0)
+ New Polarization:       (-0.21616,-0.360266,0.90746)
+ *** FresnelRefraction *** 
+*******Processing Hit*******
+Number of optical photons produced in this event : 0
+ Photon at Boundary! 
+ thePrePV:  Tank
+ thePostPV: World
+ Old Momentum Direction: (0.857493,-0.514496,0)
+ Old Polarization:       (-0.21616,-0.360266,0.90746)
+ New Momentum Direction: (0.857493,-0.514496,0)
+ New Polarization:       (-0.21616,-0.360266,0.90746)
+ *** FresnelRefraction *** 
+*******Processing Hit*******
+Number of optical photons produced in this event : 0
+ Photon at Boundary! 
+ thePrePV:  Tank
+ thePostPV: World
+ Old Momentum Direction: (0.857493,-0.514496,0)
+ Old Polarization:       (-0.21616,-0.360266,0.90746)
+ New Momentum Direction: (0.857493,-0.514496,0)
+ New Polarization:       (-0.21616,-0.360266,0.90746)
+ *** FresnelRefraction *** 
+*******Processing Hit*******
+Number of optical photons produced in this event : 0
+ Photon at Boundary! 
+ thePrePV:  Tank
+ thePostPV: World
+ Old Momentum Direction: (0.857493,-0.514496,0)
+ Old Polarization:       (-0.21616,-0.360266,0.90746)
+ New Momentum Direction: (0.857493,-0.514496,0)
+ New Polarization:       (-0.21616,-0.360266,0.90746)
+ *** FresnelRefraction *** 
+*******Processing Hit*******
+Number of optical photons produced in this event : 0
+ Photon at Boundary! 
+ thePrePV:  Tank
+ thePostPV: World
+ Old Momentum Direction: (0.857493,-0.514496,0)
+ Old Polarization:       (-0.21616,-0.360266,0.90746)
+ New Momentum Direction: (0.857493,-0.514496,0)
+ New Polarization:       (-0.21616,-0.360266,0.90746)
+ *** FresnelRefraction *** 
+*******Processing Hit*******
+Number of optical photons produced in this event : 0
+ Photon at Boundary! 
+ thePrePV:  Tank
+ thePostPV: World
+ Old Momentum Direction: (0.857493,-0.514496,0)
+ Old Polarization:       (-0.21616,-0.360266,0.90746)
+ New Momentum Direction: (0.857493,-0.514496,0)
+ New Polarization:       (-0.21616,-0.360266,0.90746)
+ *** FresnelRefraction *** 
+*******Processing Hit*******
+Number of optical photons produced in this event : 0
+ Photon at Boundary! 
+ thePrePV:  Tank
+ thePostPV: World
+ Old Momentum Direction: (0.857493,-0.514496,0)
+ Old Polarization:       (-0.21616,-0.360266,0.90746)
+ New Momentum Direction: (0.857493,-0.514496,0)
+ New Polarization:       (-0.21616,-0.360266,0.90746)
+ *** FresnelRefraction *** 
+*******Processing Hit*******
+Number of optical photons produced in this event : 0
+ Photon at Boundary! 
+ thePrePV:  Tank
+ thePostPV: World
+ Old Momentum Direction: (0.857493,-0.514496,0)
+ Old Polarization:       (-0.21616,-0.360266,0.90746)
+ New Momentum Direction: (0.857493,-0.514496,0)
+ New Polarization:       (-0.21616,-0.360266,0.90746)
+ *** FresnelRefraction *** 
+*******Processing Hit*******
+Number of optical photons produced in this event : 0
+ Photon at Boundary! 
+ thePrePV:  Tank
+ thePostPV: World
+ Old Momentum Direction: (0.857493,-0.514496,0)
+ Old Polarization:       (-0.21616,-0.360266,0.90746)
+ New Momentum Direction: (0.857493,-0.514496,0)
+ New Polarization:       (-0.21616,-0.360266,0.90746)
+ *** FresnelRefraction *** 
+*******Processing Hit*******
+Number of optical photons produced in this event : 0
+ Photon at Boundary! 
+ thePrePV:  Tank
+ thePostPV: World
+ Old Momentum Direction: (0.857493,-0.514496,0)
+ Old Polarization:       (-0.21616,-0.360266,0.90746)
+ New Momentum Direction: (0.857493,-0.514496,0)
+ New Polarization:       (-0.21616,-0.360266,0.90746)
+ *** FresnelRefraction *** 
+*******Processing Hit*******
+Number of optical photons produced in this event : 0
+number of event = 10 User=0s Real=0s Sys=0s
+Graphics systems deleted.
+Visualization Manager deleting...
